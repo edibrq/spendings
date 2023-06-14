@@ -42,9 +42,9 @@ public class SpendingsBotClient extends TelegramLongPollingBot {
         this.spendingService = spendingService;
 
         var commands = List.of(
-                new BotCommand("/start", "start using bot"),
-                new BotCommand("/add", "add a purchase"),
-                new BotCommand("/amount", "total amount of spending's")
+                new BotCommand("start", "start using bot"),
+                new BotCommand("add", "add a purchase"),
+                new BotCommand("amount", "total amount of spending's")
         );
 
         execute(new SetMyCommands(commands, new BotCommandScopeDefault(), null));
