@@ -1,4 +1,4 @@
-package com.edibroq.spendings.service;
+package com.edibroq.spendings.service.spending;
 
 import com.edibroq.spendings.model.Spending;
 import com.edibroq.spendings.repository.SpendingsRepository;
@@ -50,7 +50,7 @@ public class SpendingServiceImpl implements SpendingService {
     @Override
     public BigDecimal getAmount(Long userId, String userName) {
         Optional<Spending> spendingOptional = repository.findBySpender(userName);
-        if (!spendingOptional.isEmpty()) {
+        if (spendingOptional.isPresent()) {
             return spendingOptional.get().getAmount();
         }
         return BigDecimal.ZERO;

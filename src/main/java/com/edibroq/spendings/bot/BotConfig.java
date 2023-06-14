@@ -12,7 +12,7 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 public class BotConfig {
 
     @Autowired
-    private SpendingsBot bot;
+    private SpendingsBotClient bot;
 
     @EventListener(ContextRefreshedEvent.class)
     public void init() {

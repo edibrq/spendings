@@ -1,12 +1,12 @@
 package com.edibroq.spendings.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.Set;
 
 @Entity
 @Table(name = "spendings")
@@ -19,8 +19,10 @@ public class Spending {
     private BigDecimal amount;
 
     @Id
-    @Column(name = "spender_name")
     private String spender;
+
+    @OneToMany(mappedBy="spending")
+    private Set<Item> items;
 
     public Spending(BigDecimal amount, String spender) {
         this.amount = amount;

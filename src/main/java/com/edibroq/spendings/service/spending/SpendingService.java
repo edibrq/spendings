@@ -1,4 +1,4 @@
-package com.edibroq.spendings.service;
+package com.edibroq.spendings.service.spending;
 
 import java.math.BigDecimal;
 
