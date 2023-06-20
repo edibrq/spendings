@@ -21,7 +21,7 @@ public class Spending {
     @Id
     private String spender;
 
-    @OneToMany(mappedBy="spending")
+    @OneToMany
     private Set<Item> items;
 
     public Spending(BigDecimal amount, String spender) {
