@@ -22,6 +22,10 @@ public class ButtonsBuilder {
         return new ButtonsBuilder();
     }
 
+    public ButtonsBuilder singleRow(String value) {
+        return row(List.of(value));
+    }
+
     public ButtonsBuilder row(List<String> values) {
         var row = new KeyboardRow();
         row.addAll(values);
@@ -31,7 +35,7 @@ public class ButtonsBuilder {
 
 
     public ButtonsBuilder withBackButton() {
-        row(List.of("Back"));
+        row(List.of("back"));
         return this;
     }
 
